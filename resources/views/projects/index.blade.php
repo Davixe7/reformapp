@@ -4,11 +4,22 @@
   <div class="container">
     <h1>Explorar Proyectos</h1>
     <div class="search-box">
-      <input type="search" placeholder="Nombre o Descripción del Proyecto">
-      <select name="" id="">
-        <option value="">Seleccionar categoría</option>
-      </select>
-      <button>avanzado</button>
+      <form action="{{ route('projects.index') }}" method="get">
+        <input type="search" name="name" placeholder="Nombre o Descripción del Proyecto">
+        <select name="category_id">
+          <option value="">
+            Seleccionar categoría
+          </option>
+          @foreach( $categories as $category )
+            <option value="{{$category->id}}">
+              {{ $category->name }}
+            </option>
+          @endforeach
+        </select>
+        <button type="submit">
+          buscar
+        </button>
+      </form>
     </div>
     @if( $projects->count() )
     <ul class="jobs-results-list">
@@ -27,6 +38,10 @@
       </li>
       @endforeach
     </ul>
+    @else
+    <div class="card">
+      No hay resultados disponibles
+    </div>
     @endif
   </div>
 </section>
