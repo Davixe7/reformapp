@@ -1,0 +1,51 @@
+.form-group {
+  margin-bottom: 20px;
+  input, textarea {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    border-radius: 0;
+    box-shadow: none;
+    border: 1px solid rgba(0,0,0,.25);
+    background: none;
+    font-family: "DejaVu Serif";
+    color: gray;
+  }
+  input {
+    height: 40px;
+  }
+  textarea {
+    font-size: 13px;
+  }
+}
+label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #000;
+  // color: rgba(0,0,0,.6);
+}
+.profile-picture {
+  width: 190px;
+  height: 190px;
+  margin-right: 20px;
+  // border: 1px solid rgba(0,0,0,.2);
+  border-radius: 7px;
+  background: rgba(0,0,0,.2);
+}
+.form-section-title {
+  color: #000;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  // padding: 15px;
+  border-radius: 2px;
+  background: #fff;
+}
+
+.card {
+  padding: 20px;
+  background: #fff;
+}

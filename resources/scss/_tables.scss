@@ -1,0 +1,16 @@
+table {
+  width: 100%;
+}
+th {
+  font-size: 11px;
+  padding-bottom: 20px;
+}
+th, td {
+  text-align: left;
+  &:last-child {
+    text-align: right;
+  }
+}
+td {
+  padding: 7px 0;
+}

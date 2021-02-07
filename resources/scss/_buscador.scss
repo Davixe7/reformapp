@@ -1,0 +1,12 @@
+.search-box {
+  display: flex;
+  margin-bottom: 20px;
+  padding: 20px;
+  background: #fff;
+  input {
+    min-width: 320px;
+  }
+  input, select {
+    margin-right: 15px;
+  }
+}
