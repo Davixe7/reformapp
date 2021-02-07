@@ -17,7 +17,12 @@
         <div style="flex: 1 0 auto;">
           <div class="form-group">
             <label for="#">Email</label>
-            <input type="name" value="{{ $account->email }}">
+            <input type="email" name="email" value="{{ $account->email }}" required>
+            @error('email')
+            <div class="invalid-feedback">
+              {{ $message }}
+            </div>
+            @enderror
           </div>
         </div>
       </div>
@@ -30,15 +35,30 @@
       <div style="">
         <div class="form-group">
           <label for="#">Contraseña actual</label>
-          <input type="password" name="old_password">
+          <input class="@error('old_password') is-invalid @enderror" type="password" name="old_password">
+          @error('old_password')
+          <div class="invalid-feedback">
+            {{ $message }}
+          </div>
+          @enderror
         </div>
         <div class="form-group">
           <label for="#">Contraseña  nueva</label>
-          <input type="password" name="password">
+          <input class="@error('password') is-invalid @enderror" type="password" name="password">
+          @error('password')
+          <div class="invalid-feedback">
+            {{ $message }}
+          </div>
+          @enderror
         </div>
         <div class="form-group">
           <label for="#">Confirmar Contraseña nueva</label>
-          <input type="password" name="confirm_password">
+          <input class="@error('confirm_password') is-invalid @enderror" type="password" name="confirm_password">
+          @error('confirm_password')
+          <div class="invalid-feedback">
+            {{ $message }}
+          </div>
+          @enderror
         </div>
         <div class="form-group">
           <button type="submit">

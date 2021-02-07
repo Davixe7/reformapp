@@ -17,11 +17,16 @@
         <div style="display: flex; flex-flow: row wrap;">
           <div class="form-group" style="flex: 1 0 auto; margin-right: 20px;">
             <label for="#">Nombre</label>
-            <input type="name" name="name">
+            <input class="@error('name') is-invalid @enderror" type="name" name="name" required>
+            @error('name')
+            <div class="invalid-feedback">
+              {{ $message }}
+            </div>
+            @enderror
           </div>
           <div class="form-group" style="flex: 1 0 30%;">
             <label for="#">Categoría</label>
-            <select name="category_id" name="category">
+            <select class="@error('category_id') is-invalid @enderror" name="category_id" required>
               <option value="#">Seleccionar Categoría</option>
               @foreach( $categories as $category )
                 <option value="{{$category->id}}">
@@ -29,23 +34,47 @@
                 </option>
               @endforeach
             </select>
+            @error('category_id')
+            <div class="invalid-feedback">
+              {{ $message }}
+            </div>
+            @enderror
           </div>
         </div>
         <div class="form-group">
           <label for="#">Descripción</label>
-          <textarea name="description" id="" rows="5" style="max-width: 100%"></textarea>
+          <textarea
+            class="@error('description') is-invalid @enderror"
+            name="description" id="" rows="5" style="max-width: 100%" required></textarea>
+          @error('description')
+          <div class="invalid-feedback">
+            {{ $message }}
+          </div>
+          @enderror
         </div>
         <div style="display: flex; flex-flow: row; justify-content: space-between;">
           <div class="form-group" style="margin-right: 20px;">
             <label for="#">Fecha Limite</label>
-            <input type="date" name="due_date">
+            <input class="@error('due_date') is-invalid @enderror" type="date" name="due_date">
+            @error('due_date')
+            <div class="invalid-feedback">
+              {{ $message }}
+            </div>
+            @enderror
           </div>
           <div class="form-group" style="margin-right: 20px;">
             <label for="#">Presupuesto</label>
-            <input type="number" name="budget">
+            <input class="@error('budget') is-invalid @enderror" type="number" name="budget">
+            @error('budget')
+            <div class="invalid-feedback">
+              {{ $message }}
+            </div>
+            @enderror
           </div>
           <div class="form-group">
-            <label for="" style="color: #fff;">Enviar</label>
+            <label for="" style="color: #fff;">
+              Enviar
+            </label>
             <button type="submit">
               Publicar Proyecto
             </button>
