@@ -21,8 +21,13 @@
           </div>
           <div class="form-group" style="flex: 1 0 30%;">
             <label for="#">Categoría</label>
-            <select name="" id="" name="category" value="">
+            <select name="category_id" name="category">
               <option value="#">Seleccionar Categoría</option>
+              @foreach( $categories as $category )
+                <option value="{{$category->id}}">
+                  {{ $category->name }}
+                </option>
+              @endforeach
             </select>
           </div>
         </div>

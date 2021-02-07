@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Project;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class ProjectController extends Controller
@@ -24,7 +25,8 @@ class ProjectController extends Controller
      */
     public function create()
     {
-      return view('projects.create');
+      $categories = Category::all();
+      return view('projects.create', ['categories'=>$categories]);
     }
 
     /**
@@ -35,12 +37,13 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
-      Project::create([
+      $project = Project::create([
         'name' => $request->name,
         'description' => $request->description,
         'budget' => $request->budget,
         'due_date' => $request->due_date,
-        'user_id' => auth()->id()
+        'user_id' => auth()->id(),
+        'category_id' => $request->category_id
       ]);
       
       return redirect()->route('projects.edit', ['project'=>$project])->with(['message'=>'Proyecto creado exitosamente']);
@@ -65,7 +68,8 @@ class ProjectController extends Controller
      */
     public function edit(Project $project)
     {  
-      return view('projects.edit', ['project' => $project]);
+      $categories = Category::all();
+      return view('projects.edit', ['project' => $project, 'categories' => $categories]);
     }
 
     /**
@@ -82,6 +86,7 @@ class ProjectController extends Controller
         'description' => $request->description,
         'budget' => $request->budget,
         'due_date' => $request->due_date,
+        'category_id' => $request->category_id ?: $project->category_id
       ]);
       
       return redirect()->route('projects.edit', ['project'=>$project])->with(['message'=>'Proyecto actualizado exitosamente']);

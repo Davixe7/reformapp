@@ -44,4 +44,8 @@ class User extends Authenticatable
     public function profile(){
       return $this->hasOne('App\Models\Profile');
     }
+    
+    public function subscriptions(){
+      return $this->belongsToMany('App\Models\Membership')->withPivot('subscribed_at', 'expires_at', 'expired_at');;
+    }
 }

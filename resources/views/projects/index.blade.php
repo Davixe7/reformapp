@@ -2,7 +2,7 @@
 @section('content')
 <section id="jobs">
   <div class="container">
-    <h1>Explorar Trabajos</h1>
+    <h1>Explorar Proyectos</h1>
     <div class="search-box">
       <input type="search" placeholder="Nombre o Descripción del Proyecto">
       <select name="" id="">

@@ -20,8 +20,11 @@ class CreateProjectsTable extends Migration
             $table->text('description');
             $table->double('budget')->nullable();
             $table->datetime('due_date')->nullable();
+            $table->enum('status', ['published', 'draft', 'banned'])->default('draft');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->unsignedBigInteger('category_id');
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
         });
     }
 

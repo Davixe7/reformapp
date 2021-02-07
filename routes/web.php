@@ -13,12 +13,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'App\Http\Controllers\ProjectController@index');
 
 
 Route::get('profile', 'App\Http\Controllers\ProfileController@index')->name('profile');
 Route::put('profile', 'App\Http\Controllers\ProfileController@update')->name('profile.update');
+
+Route::get('accounts', 'App\Http\Controllers\UserController@edit')->name('accounts');
+Route::put('accounts', 'App\Http\Controllers\UserController@update')->name('accounts.update');
+
+Route::get('subscriptions', 'App\Http\Controllers\MembershipController@index')->name('subscriptions.index');
 
 Route::resource('projects', 'App\Http\Controllers\ProjectController');

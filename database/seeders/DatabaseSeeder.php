@@ -20,6 +20,12 @@ class DatabaseSeeder extends Seeder
           'password' => bcrypt('123456')
         ]);
         
+        $membership = \App\Models\Membership::create([
+          'name' => 'Membresia Básica',
+          'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit',
+          'price' => 50
+        ]);
+        
         $profile = \App\Models\Profile::create([
           'name' => 'John Doe',
           'email' => 'johndoe@formapp.com',
@@ -27,5 +33,26 @@ class DatabaseSeeder extends Seeder
           'phone_2' => '4141231235',
           'user_id' => $user->id
         ]);
+        
+        $user->subscriptions()->attach(1, [
+          'subscribed_at' => \Carbon\Carbon::now(),
+          'expires_at'    => \Carbon\Carbon::now()->addDays(30),
+          'expired_at'    => null
+        ]);
+        
+        $cats = [
+          'pintura',
+          'electricidad',
+          'carpinteria',
+          'plomeria',
+          'herreria',
+          'diseño'
+        ];
+        
+        foreach( $cats as $cat ){
+          \App\Models\Category::create([
+            'name' => $cat
+          ]);
+        }
     }
 }

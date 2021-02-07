@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Project extends Model
+class Membership extends Model
 {
     use HasFactory;
     
@@ -16,14 +16,7 @@ class Project extends Model
      */
     protected $fillable = [
         'name',
+        'price',
         'description',
-        'budget',
-        'due_date',
-        'user_id',
-        'category_id'
     ];
-    
-    public function user(){
-      return $this->belongsTo('App\Models\User');
-    }
 }

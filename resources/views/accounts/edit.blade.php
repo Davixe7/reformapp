@@ -17,7 +17,7 @@
         <div style="flex: 1 0 auto;">
           <div class="form-group">
             <label for="#">Email</label>
-            <input type="name" value="johndoe@reformapp.com">
+            <input type="name" value="{{ $account->email }}">
           </div>
         </div>
       </div>
