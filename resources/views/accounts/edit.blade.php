@@ -53,7 +53,7 @@
         </div>
         <div class="form-group">
           <label for="#">Confirmar Contraseña nueva</label>
-          <input class="@error('confirm_password') is-invalid @enderror" type="password" name="confirm_password">
+          <input class="@error('confirm_password') is-invalid @enderror" type="password" name="password_confirmation">
           @error('confirm_password')
           <div class="invalid-feedback">
             {{ $message }}
