@@ -26,4 +26,23 @@ class Project extends Model
     public function user(){
       return $this->belongsTo('App\Models\User');
     }
+    
+    public function scopeByCategory($query, $category_id){
+      if( !$category_id ){ return $query; }
+      return $query->where('category_id',$category_id);
+    }
+    
+    public function scopeByName($query, $name){
+      if( !$name ){ return $query; }
+      return $query->where('name', $name);
+    }
+    
+    public function scopePublished($query){
+      return $query->where('status', 'published');
+    }
+    
+    public function scopeByDateRange($query, $from, $to){
+      if( !$from && !$to ){ return $query; }
+      return $query->whereBetween('created_at', [$from, $to]);
+    }
 }
