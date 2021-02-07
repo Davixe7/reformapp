@@ -18,11 +18,16 @@
         <div style="display: flex; flex-flow: row wrap;">
           <div class="form-group" style="flex: 1 0 auto; margin-right: 20px;">
             <label for="#">Nombre</label>
-            <input type="name" name="name" value="{{ $project->name }}">
+            <input class="@error('name') is-invalid @enderror" type="name" name="name" value="{{ $project->name }}" required>
+            @error('name')
+            <div class="invalid-feedback">
+              {{ $message }}
+            </div>
+            @enderror
           </div>
           <div class="form-group" style="flex: 1 0 30%;">
             <label for="#">Categoría</label>
-            <select name="category_id" name="category" value="{{$project->category_id}}">
+            <select class="@error('category_id') is-invalid @enderror" name="category_id" value="{{$project->category_id}}" required>
               <option value="#">Seleccionar Categoría</option>
               @foreach( $categories as $category )
                 <option value="{{$category->id}}" @if($project->category_id) selected @endif>
@@ -30,23 +35,45 @@
                 </option>
               @endforeach
             </select>
+            @error('category_id')
+            <div class="invalid-feedback">
+              {{ $message }}
+            </div>
+            @enderror
           </div>
         </div>
         <div class="form-group">
           <label for="#">Descripción</label>
-          <textarea name="description" rows="5" style="max-width: 100%">{{ $project->description }}</textarea>
+          <textarea class="@error('description') is-invalid @enderror" name="description" rows="5" required>{{ $project->description }}</textarea>
+          @error('description')
+          <div class="invalid-feedback">
+            {{ $message }}
+          </div>
+          @enderror
         </div>
         <div style="display: flex; flex-flow: row; justify-content: space-between;">
           <div class="form-group" style="margin-right: 20px;">
             <label for="#">Fecha Limite</label>
-            <input type="date" name="due_date" value="{{ \Carbon\Carbon::parse($project->due_date)->format('Y-m-d') }}">
+            <input class="@error('due_date') is-invalid @enderror" type="date" name="due_date" value="{{ \Carbon\Carbon::parse($project->due_date)->format('Y-m-d') }}">
+            @error('due_date')
+            <div class="invalid-feedback">
+              {{ $message }}
+            </div>
+            @enderror
           </div>
           <div class="form-group" style="margin-right: 20px;">
             <label for="#">Presupuesto</label>
-            <input type="number" name="budget" value="{{ $project->budget }}">
+            <input class="@error('budget') is-invalid @enderror" type="number" name="budget" value="{{ $project->budget }}">
+            @error('budget')
+            <div class="invalid-feedback">
+              {{ $message }}
+            </div>
+            @enderror
           </div>
           <div class="form-group">
-            <label for="" style="color: #fff;">Enviar</label>
+            <label for="" style="color: #fff;">
+              Enviar
+            </label>
             <button type="submit">
               Actualizar Proyecto
             </button>
