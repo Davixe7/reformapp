@@ -10,8 +10,8 @@
       <div class="navbar">
         <a href="#" class="navbar-brand" >ReformApp</a>
         <ul class="navbar-nav">
-          <li><a href="./create.html">Publicar Proyecto</a></li>
-          <li><a href="./index.html">Trabajos</a></li>
+          <li><a href="{{ route('projects.create') }}">Publicar Proyecto</a></li>
+          <li><a href="{{ route('projects.index') }}">Trabajos</a></li>
           <li><a href="{{ route('profile') }}">Perfil</a></li>
           <li><a href="membership.html">Membresia</a></li>
           <li><a href="account.html">Mi cuenta</a></li>

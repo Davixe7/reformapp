@@ -20,3 +20,5 @@ Route::get('/', function () {
 
 Route::get('profile', 'App\Http\Controllers\ProfileController@index')->name('profile');
 Route::put('profile', 'App\Http\Controllers\ProfileController@update')->name('profile.update');
+
+Route::resource('projects', 'App\Http\Controllers\ProjectController');
