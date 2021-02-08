@@ -11,7 +11,7 @@
     
     <div class="card" style="margin-bottom: 20px;">
       <div class="form-section-title">
-        General
+        <i class="material-icons-outlined">edit</i> General
       </div>
       <div>
         <div style="flex: 1 0 auto;">
@@ -30,7 +30,7 @@
     
     <div class="card">
       <div class="form-section-title">
-        Seguridad
+        <i class="material-icons material-icons-outline">lock_open</i> Seguridad
       </div>
       <div style="">
         <div class="form-group">

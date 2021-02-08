@@ -41,18 +41,32 @@ class DatabaseSeeder extends Seeder
         ]);
         
         $cats = [
-          'pintura',
-          'electricidad',
-          'carpinteria',
-          'plomeria',
-          'herreria',
-          'diseño'
+        'pintura' => 'format_paint',
+        'electricidad' => 'electrical_services',
+        'carpinteria' => 'carpenter',
+        'plomeria' => 'plumbing',
+        'herreria' => 'hardware',
+        'diseño' => 'design_services',
+        'limpieza' => 'cleaning_services',
+        'informática' => 'memory',
         ];
         
-        foreach( $cats as $cat ){
+        foreach( $cats as $key => $value){
           \App\Models\Category::create([
-            'name' => $cat
+            'name' => $key,
+            'icon_name' => $value,
           ]);
         }
+        
+        \App\Models\Category::all()->each(function($cat){
+          \App\Models\Project::create([
+            'name' => 'Proyecto Prueba ' . $cat->name,
+            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+            'due_date' => '2021-03-30 12:00:00',
+            'budget' => 100,
+            'category_id' => $cat->id,
+            'user_id' => 1
+          ]);
+        });
     }
 }

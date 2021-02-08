@@ -27,6 +27,10 @@ class Project extends Model
       return $this->belongsTo('App\Models\User');
     }
     
+    public function category(){
+      return $this->belongsTo('App\Models\Category');
+    }
+    
     public function scopeByCategory($query, $category_id){
       if( !$category_id ){ return $query; }
       return $query->where('category_id',$category_id);
@@ -34,7 +38,7 @@ class Project extends Model
     
     public function scopeByName($query, $name){
       if( !$name ){ return $query; }
-      return $query->where('name', $name);
+      return $query->where('name', 'like', "%$name%");
     }
     
     public function scopePublished($query){

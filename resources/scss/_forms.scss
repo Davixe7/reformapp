@@ -2,14 +2,13 @@
   margin-bottom: 20px;
   input, textarea {
     width: 100%;
-    max-width: 100%;
+    max-width: 100% !important;
     box-sizing: border-box;
     padding: 10px;
     border-radius: 0;
     box-shadow: none;
     border: 1px solid rgba(0,0,0,.25);
     background: none;
-    font-family: "DejaVu Serif";
     color: gray;
   }
   input {
@@ -17,6 +16,7 @@
   }
   textarea {
     font-size: 13px;
+    width: 100% !important;
   }
 }
 label {
@@ -36,6 +36,8 @@ label {
   background: rgba(0,0,0,.2);
 }
 .form-section-title {
+  display: flex;
+  align-items: center;
   color: #000;
   font-size: 14px;
   font-weight: 600;
@@ -43,6 +45,10 @@ label {
   // padding: 15px;
   border-radius: 2px;
   background: #fff;
+  i.material-icons, i.material-icons-outlined {
+    font-size: 1.25em;
+    margin-right: 10px;
+  }
 }
 
 .card {

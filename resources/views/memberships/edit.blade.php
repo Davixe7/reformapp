@@ -2,13 +2,14 @@
 @section('content')
 <section id="profile" style="width: 50%;">
   <div class="container">
-    <h1>Membresia</h1>
+    <h1>Membresía</h1>
     <div class="card" style="margin-bottom: 20px;">
       Lorem ipsum dolor sit amet
     </div>
     
     <div class="card" style="margin-bottom: 20px;">
       <div class="form-section-title">
+        <i class="material-icons-outlined">badge</i>
         Plan Actual
       </div>
       @if( $subscription = auth()->user()->subscriptions()->where('expired_at', null)->first() )
@@ -34,6 +35,7 @@
     
     <div class="card">
       <div class="form-section-title">
+        <i class="material-icons">history</i>
         Historial
       </div>
       <div style="">

@@ -1,8 +1,9 @@
 @import 'forms';
 @import 'tables';
 @import 'buscador';
+@import 'material-icons';
 body {
-  font-size: 14px;
+  font-size: 13px;
   margin: 0;
   background: #efefef;
 }
@@ -18,13 +19,14 @@ body {
   padding: 0 20px;
   margin-bottom: 20px;
   // border-bottom: 1px solid gray;
-  background: #fff;
+  background: #f9d200;
   a {
     color: #000;
   }
 }
 .navbar-brand {
-  font-weight: 600;
+  font-size: 1.2em;
+  font-weight: 700;
   text-decoration: none;
 }
 .navbar-nav {
@@ -38,6 +40,7 @@ body {
     &:last-child { margin-right: 0; }
   }
   a {
+    font-weight: 700;
     text-decoration: none;
   }
 }
@@ -46,22 +49,24 @@ body {
 }
 
 .jobs-results-list {
-  @include reset-list;
-  width: 50%;
+  @include reset-list;  
 }
 .jobs-results-list li {
   display: flex;
-  align-items: center;
   margin-bottom: 15px;
-  padding: 20px;
-  background: #fff;
-  .employer-avatar {
+  cursor: pointer;
+  transition: all .5s;
+  .avatar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
     flex: 0 0 50px;
     width: 50px;
     height: 50px;
     margin-right: 20px;
     border-radius: 10%;
-    background: rgba(0,0,0,.2);
+    background: lightblue;
   }
   h2 {
     font-size: 14px;
@@ -71,12 +76,46 @@ body {
     flex: 1 1 auto;
   }
   .excerpt {
+    display: -webkit-box;
     font-size: 12px;
     color: gray;
     margin-bottom: 5px;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
   }
   .published-at {
     font-size: 10px;
     color: gray;
+  }
+  &:hover {
+    box-shadow: 0 2px 12px 2px rgba(0,0,0,.125);
+  }
+}
+
+.help-text {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: rgba(0,0,0,.5);
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+button {
+  color: #fff;
+  font-weight: 500;
+  padding: 10px 30px;
+  background: #527cf2;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.col-lg-6 {
+  width: 100%;
+  @media(min-width: 768px){
+    width: 50%;
   }
 }

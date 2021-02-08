@@ -11,6 +11,7 @@
       </div>
       <div class="card" style="margin-bottom: 20px;">
         <div class="form-section-title">
+          <i class="material-icons-outlined">account_circle</i>
           Información Básica
         </div>
         <div>
@@ -43,6 +44,7 @@
       
       <div class="card">
         <div class="form-section-title">
+          <i class="material-icons-outlined">perm_contact_calendar</i>
           Información de Contacto
         </div>
         <div style="">
