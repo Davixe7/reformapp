@@ -19,13 +19,38 @@
         <ul class="navbar-nav">
           <li><a href="{{ route('projects.create') }}">Publicar Proyecto</a></li>
           <li><a href="{{ route('projects.index') }}">Proyectos</a></li>
+          @if( auth()->check() )
+            <li><a href="{{ route('profile') }}">Perfil</a></li>
+            <li><a href="{{ route('subscriptions.index') }}">Membresía</a></li>
+            <li><a href="{{ route('accounts') }}">Mi cuenta</a></li>
+            <li><a href="{{ route('accounts') }}">Cerrar Sesión</a></li>
+          @else
+          <li><a href="{{ route('accounts') }}">Ingresar</a></li>
+          @endif
+        </ul>
+        <div class="sidenav-toggler" onclick="document.querySelector('.sidenav').classList.add('active')">
+          <i class="material-icons">menu</i>
+        </div>
+      </div>
+      <div class="sidenav">
+        <div class="close-btn" onclick="document.querySelector('.sidenav').classList.remove('active')">
+          <i class="material-icons">close</i>
+        </div>
+        <div class="sidenav-brand">
+          ReformApp
+        </div>
+        <ul class="sidenav-nav">
+          <li><a href="{{ route('projects.create') }}">Publicar Proyecto</a></li>
+          <li><a href="{{ route('projects.index') }}">Proyectos</a></li>
+          @if( auth()->check() )
           <li><a href="{{ route('profile') }}">Perfil</a></li>
           <li><a href="{{ route('subscriptions.index') }}">Membresía</a></li>
           <li><a href="{{ route('accounts') }}">Mi cuenta</a></li>
+          <li><a href="{{ route('accounts') }}">Cerrar Sesión</a></li>
+          @else
+          <li><a href="{{ route('accounts') }}">Ingresar</a></li>
+          @endif
         </ul>
-        <div class="sidenav-toggler">
-          <i class="material-icons">menu</i>
-        </div>
       </div>
       @yield('content')
     </div>

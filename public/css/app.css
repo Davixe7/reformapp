@@ -15,6 +15,10 @@ label {
   color: #000;
 }
 
+select {
+  text-transform: capitalize;
+}
+
 .profile-picture {
   width: 190px;
   height: 190px;
@@ -57,24 +61,6 @@ th:last-child, td:last-child {
 
 td {
   padding: 7px 0;
-}
-
-.search-box {
-  display: flex;
-  flex-flow: row nowrap;
-  margin-bottom: 20px;
-}
-.search-box input {
-  flex: 1 1 auto;
-  border: none;
-  box-shadow: 0 2px 6px 1px rgba(0, 0, 0, 0.12);
-}
-.search-box select, .search-box button {
-  flex: 0 1;
-  text-transform: capitalize;
-}
-.search-box input, .search-box select {
-  margin-right: 15px;
 }
 
 /* fallback */
@@ -192,6 +178,121 @@ td {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.sidenav {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #f9d200;
+  z-index: 3000;
+}
+.sidenav.active {
+  display: block;
+}
+
+.sidenav-brand {
+  font-weight: 700;
+  font-size: 16px;
+  text-align: center;
+  padding: 50px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 45px;
+  right: 45px;
+  cursor: pointer;
+}
+
+.sidenav-nav {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-flow: column nowrap;
+}
+.sidenav-nav li {
+  padding: 20px;
+  text-align: center;
+}
+.sidenav-nav a {
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.search-box {
+  display: flex;
+  flex-flow: row nowrap;
+  margin-bottom: 20px;
+}
+.search-box input {
+  flex: 1 1 auto;
+  border: none;
+  box-shadow: 0 2px 6px 1px rgba(0, 0, 0, 0.12);
+}
+.search-box select, .search-box button {
+  flex: 0 1;
+  text-transform: capitalize;
+}
+.search-box input, .search-box select {
+  margin-right: 15px;
+}
+
+.jobs-results-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.jobs-results-list li {
+  display: flex;
+  flex-flow: row nowrap;
+  margin-bottom: 15px;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+.jobs-results-list li .avatar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  flex: 0 0 50px;
+  width: 50px;
+  height: 50px;
+  margin-right: 20px;
+  border-radius: 10%;
+  background: #ffab0b;
+}
+.jobs-results-list li h2 {
+  font-size: 14px;
+  font-weight: 700;
+  margin: 0 0 5px;
+}
+.jobs-results-list li .content {
+  flex: 1 1 auto;
+}
+.jobs-results-list li .excerpt {
+  display: -webkit-box;
+  font-size: 12px;
+  font-weight: 600;
+  color: gray;
+  margin-bottom: 5px;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+}
+.jobs-results-list li .published-at {
+  font-size: 10px;
+  color: gray;
+}
+.jobs-results-list li:hover {
+  box-shadow: 0 2px 12px 2px rgba(0, 0, 0, 0.125);
+}
+
 body {
   font-family: "Mulish";
   font-size: 13px;
@@ -251,58 +352,6 @@ h1 {
 
 .container {
   padding: 0 20px;
-}
-
-.jobs-results-list {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-.jobs-results-list li {
-  display: flex;
-  flex-flow: row nowrap;
-  margin-bottom: 15px;
-  cursor: pointer;
-  transition: all 0.5s;
-}
-.jobs-results-list li .avatar {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #fff;
-  flex: 0 0 50px;
-  width: 50px;
-  height: 50px;
-  margin-right: 20px;
-  border-radius: 10%;
-  background: lightblue;
-}
-.jobs-results-list li h2 {
-  font-size: 14px;
-  font-weight: 700;
-  margin: 0 0 5px;
-}
-.jobs-results-list li .content {
-  flex: 1 1 auto;
-}
-.jobs-results-list li .excerpt {
-  display: -webkit-box;
-  font-size: 12px;
-  font-weight: 600;
-  color: gray;
-  margin-bottom: 5px;
-  text-overflow: ellipsis;
-  -webkit-line-clamp: 2;
-  overflow: hidden;
-  -webkit-box-orient: vertical;
-}
-.jobs-results-list li .published-at {
-  font-size: 10px;
-  color: gray;
-}
-.jobs-results-list li:hover {
-  box-shadow: 0 2px 12px 2px rgba(0, 0, 0, 0.125);
 }
 
 .sidenav-toggler {

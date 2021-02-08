@@ -27,6 +27,9 @@ label {
   color: #000;
   // color: rgba(0,0,0,.6);
 }
+select {
+  text-transform: capitalize;
+}
 .profile-picture {
   width: 190px;
   height: 190px;
