@@ -1,24 +1,6 @@
 .form-group {
   margin-bottom: 20px;
 }
-.form-group input, .form-group textarea {
-  width: 100%;
-  max-width: 100%;
-  box-sizing: border-box;
-  padding: 10px;
-  border-radius: 0;
-  box-shadow: none;
-  border: 1px solid rgba(0, 0, 0, 0.25);
-  background: none;
-  font-family: "DejaVu Serif";
-  color: gray;
-}
-.form-group input {
-  height: 40px;
-}
-.form-group textarea {
-  font-size: 13px;
-}
 
 label {
   display: block;
@@ -37,6 +19,9 @@ label {
 }
 
 .form-section-title {
+  display: flex;
+  flex: 1 0 auto;
+  align-items: center;
   color: #000;
   font-size: 14px;
   font-weight: 600;
@@ -44,10 +29,9 @@ label {
   border-radius: 2px;
   background: #fff;
 }
-
-.card {
-  padding: 20px;
-  background: #fff;
+.form-section-title i.material-icons, .form-section-title i.material-icons-outlined {
+  font-size: 1.25em;
+  margin-right: 10px;
 }
 
 table {
@@ -72,21 +56,142 @@ td {
 
 .search-box {
   display: flex;
+  flex-flow: row nowrap;
   margin-bottom: 20px;
-  padding: 20px;
-  background: #fff;
 }
 .search-box input {
-  min-width: 320px;
+  flex: 1 0 auto;
 }
 .search-box input, .search-box select {
   margin-right: 15px;
 }
 
+/* fallback */
+@font-face {
+  font-family: "Material Icons";
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/materialicons/v76/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2) format("woff2");
+}
+/* fallback */
+@font-face {
+  font-family: "Material Icons Outlined";
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/materialiconsoutlined/v44/gok-H7zzDkdnRel8-DQ6KAXJ69wP1tGnf4ZGhUce.woff2) format("woff2");
+}
+/* fallback */
+@font-face {
+  font-family: "Material Icons Round";
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/materialiconsround/v43/LDItaoyNOAY6Uewc665JcIzCKsKc_M9flwmP.woff2) format("woff2");
+}
+/* fallback */
+@font-face {
+  font-family: "Material Icons Sharp";
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/materialiconssharp/v44/oPWQ_lt5nv4pWNJpghLP75WiFR4kLh3kvmvR.woff2) format("woff2");
+}
+/* fallback */
+@font-face {
+  font-family: "Material Icons Two Tone";
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/materialiconstwotone/v42/hESh6WRmNCxEqUmNyh3JDeGxjVVyMg4tHGctNCu0.woff2) format("woff2");
+}
+.material-icons {
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -moz-font-feature-settings: "liga";
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.material-icons-outlined {
+  font-family: "Material Icons Outlined";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -moz-font-feature-settings: "liga";
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.material-icons-round {
+  font-family: "Material Icons Round";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -moz-font-feature-settings: "liga";
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.material-icons-sharp {
+  font-family: "Material Icons Sharp";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -moz-font-feature-settings: "liga";
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.material-icons-two-tone {
+  font-family: "Material Icons Two Tone";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -moz-font-feature-settings: "liga";
+  -moz-osx-font-smoothing: grayscale;
+}
+
 body {
-  font-size: 14px;
+  font-family: "Mulish";
+  font-size: 13px;
   margin: 0;
   background: #efefef;
+}
+
+h1 {
+  font-size: 19.5px;
+  font-weight: 700;
+  margin-bottom: 20px;
 }
 
 .navbar {
@@ -95,14 +200,15 @@ body {
   height: 60px;
   padding: 0 20px;
   margin-bottom: 20px;
-  background: #fff;
+  background: #f9d200;
 }
 .navbar a {
   color: #000;
 }
 
 .navbar-brand {
-  font-weight: 600;
+  font-size: 1.2em;
+  font-weight: 700;
   text-decoration: none;
 }
 
@@ -110,7 +216,7 @@ body {
   list-style-type: none;
   padding: 0;
   margin: 0;
-  display: flex;
+  display: none !important;
   flex-flow: row nowrap;
   align-items: center;
   margin-left: auto;
@@ -122,7 +228,13 @@ body {
   margin-right: 0;
 }
 .navbar-nav a {
+  font-weight: 700;
   text-decoration: none;
+}
+@media (min-width: 768px) {
+  .navbar-nav {
+    display: flex !important;
+  }
 }
 
 .container {
@@ -133,36 +245,96 @@ body {
   list-style-type: none;
   padding: 0;
   margin: 0;
-  width: 50%;
 }
 
 .jobs-results-list li {
   display: flex;
-  align-items: center;
+  flex-flow: row nowrap;
   margin-bottom: 15px;
-  padding: 20px;
-  background: #fff;
+  cursor: pointer;
+  transition: all 0.5s;
 }
-.jobs-results-list li .employer-avatar {
+.jobs-results-list li .avatar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
   flex: 0 0 50px;
   width: 50px;
   height: 50px;
   margin-right: 20px;
   border-radius: 10%;
-  background: rgba(0, 0, 0, 0.2);
+  background: lightblue;
 }
 .jobs-results-list li h2 {
   font-size: 14px;
   margin: 0 0 5px;
 }
+.jobs-results-list li .content {
+  flex: 1 1 auto;
+}
 .jobs-results-list li .excerpt {
+  display: -webkit-box;
   font-size: 12px;
   color: gray;
   margin-bottom: 5px;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
 }
 .jobs-results-list li .published-at {
   font-size: 10px;
   color: gray;
 }
+.jobs-results-list li:hover {
+  box-shadow: 0 2px 12px 2px rgba(0, 0, 0, 0.125);
+}
 
-/*# sourceMappingURL=app.css.map */
+.sidenav-toggler {
+  cursor: pointer;
+  margin-left: auto;
+}
+@media (min-width: 768px) {
+  .sidenav-toggler {
+    display: none;
+  }
+}
+
+.help-text {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+button {
+  color: #fff;
+  font-weight: 500;
+  padding: 10px 30px;
+  background: #527cf2;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.col-lg-6 {
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .col-lg-6 {
+    width: 50%;
+  }
+}
+
+.card {
+  display: block;
+  padding: 20px;
+}
+
+.alert {
+  margin-top: 0;
+}

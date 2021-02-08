@@ -1,27 +1,31 @@
 @extends('layouts.app')
 @section('content')
 <section id="jobs">
-  <div class="container">
+  <div class="container-fluid">
     <h1>Explorar Proyectos</h1>
-    <div class="search-box">
+    <div class="col-lg-6">
       <form action="{{ route('projects.index') }}" method="get">
-        <input type="search" name="name" placeholder="Nombre o Descripción del Proyecto">
-        <select name="category_id">
-          <option value="">
-            Seleccionar categoría
-          </option>
-          @foreach( $categories as $category )
+        <div class="search-box">
+          <input class="form-control"
+            type="search"
+            name="name"
+            placeholder="Nombre o Descripción del Proyecto"
+          />
+          <select class="form-control" name="category_id">
+            <option value="">
+              Seleccionar categoría
+            </option>
+            @foreach( $categories as $category )
             <option value="{{$category->id}}">
               {{ $category->name }}
             </option>
-          @endforeach
-        </select>
-        <button type="submit">
-          buscar
-        </button>
+            @endforeach
+          </select>
+          <button type="submit">
+            Buscar
+          </button>
+        </div>
       </form>
-    </div>
-    <div class="col-lg-6">
       @if( $projects->count() )
       <div class="help-text">
         <div>
