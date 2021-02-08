@@ -14,7 +14,8 @@ class MembershipController extends Controller
      */
     public function index()
     {
-      return view('memberships.edit');
+        $memberships = Membership::all();
+        return view('admin.memberships.index', ['memberships' => $memberships]);
     }
 
     /**
@@ -24,7 +25,7 @@ class MembershipController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.memberships.create');
     }
 
     /**
@@ -33,9 +34,17 @@ class MembershipController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreMembershipRequest $request)
     {
-        //
+        $membership = Membership::create([
+            'name' => $request->name,
+            'description' => $request->description,
+            'price' => $request->price,
+        ]);
+
+        if( !$membership ){return false;}
+
+        return view('admin.memberships.show', ['membership' => $membership]);
     }
 
     /**
@@ -45,8 +54,8 @@ class MembershipController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show(Membership $membership)
-    {
-        //
+    {   
+        return view('admin.memberships.show', ['membership' => $membership]);
     }
 
     /**
@@ -57,7 +66,7 @@ class MembershipController extends Controller
      */
     public function edit(Membership $membership)
     {
-        //
+        return view('admin.memberships.edit', [$membership]);
     }
 
     /**
@@ -67,9 +76,15 @@ class MembershipController extends Controller
      * @param  \App\Models\Membership  $membership
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Membership $membership)
+    public function update(UpdateMembershipRequest $request, Membership $membership)
     {
-        //
+        $membership->update([
+            'name' => $request->name ?: $membership->name,
+            'description' => $request->description ?: $membership->description,
+            'price' => $request->price ?: $membership->price
+        ]);
+
+        return view('admin.membership.show', ['membership' => $membership]);
     }
 
     /**
@@ -80,6 +95,7 @@ class MembershipController extends Controller
      */
     public function destroy(Membership $membership)
     {
-        //
+        $membership->destroy();
+        return view('admin.membership.index', ['memberships' => Membership::all()]);
     }
 }
