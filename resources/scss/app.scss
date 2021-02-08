@@ -3,6 +3,7 @@
 @import 'buscador';
 @import 'material-icons';
 body {
+  font-family: 'Mulish';
   font-size: 13px;
   margin: 0;
   background: #efefef;
@@ -11,6 +12,11 @@ body {
   list-style-type: none;
   padding: 0;
   margin: 0;
+}
+h1 {
+  font-size: 19.5px;
+  font-weight: 700;
+  margin-bottom: 20px;
 }
 .navbar {
   display: flex;
@@ -31,7 +37,7 @@ body {
 }
 .navbar-nav {
   @include reset-list;
-  display: flex;
+  display: none !important;
   flex-flow: row nowrap;
   align-items: center;
   margin-left: auto;
@@ -43,6 +49,9 @@ body {
     font-weight: 700;
     text-decoration: none;
   }
+  @media(min-width: 768px){
+    display: flex !important;
+  }
 }
 .container {
   padding: 0 20px;
@@ -53,6 +62,7 @@ body {
 }
 .jobs-results-list li {
   display: flex;
+  flex-flow: row nowrap;
   margin-bottom: 15px;
   cursor: pointer;
   transition: all .5s;
@@ -93,6 +103,13 @@ body {
     box-shadow: 0 2px 12px 2px rgba(0,0,0,.125);
   }
 }
+.sidenav-toggler {
+  cursor: pointer;
+  margin-left: auto;
+  @media(min-width: 768px){
+    display: none;
+  }
+}
 
 .help-text {
   display: flex;
@@ -118,4 +135,11 @@ button {
   @media(min-width: 768px){
     width: 50%;
   }
+}
+.card {
+  display: block;
+  padding: 20px;
+}
+.alert {
+  margin-top: 0;
 }

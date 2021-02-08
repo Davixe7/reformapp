@@ -1,10 +1,10 @@
 .search-box {
   display: flex;
+  flex-flow: row nowrap;
   margin-bottom: 20px;
-  padding: 20px;
-  background: #fff;
+
   input {
-    min-width: 320px;
+    flex: 1 0 auto;
   }
   input, select {
     margin-right: 15px;
