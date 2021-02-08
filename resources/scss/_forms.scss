@@ -9,7 +9,6 @@
     box-shadow: none;
     border: 1px solid rgba(0,0,0,.25);
     background: none;
-    font-family: "DejaVu Serif";
     color: gray;
   }
   input {
@@ -36,6 +35,8 @@ label {
   background: rgba(0,0,0,.2);
 }
 .form-section-title {
+  display: flex;
+  align-items: center;
   color: #000;
   font-size: 14px;
   font-weight: 600;
@@ -43,6 +44,10 @@ label {
   // padding: 15px;
   border-radius: 2px;
   background: #fff;
+  i.material-icons, i.material-icons-outlined {
+    font-size: 1.25em;
+    margin-right: 10px;
+  }
 }
 
 .card {

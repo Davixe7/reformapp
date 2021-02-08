@@ -24,8 +24,12 @@
     @if( $projects->count() )
     <ul class="jobs-results-list">
       @foreach( $projects as $project )
-      <li>
-        <div class="employer-avatar"></div>
+      <li class="card">
+        <div class="avatar">
+          <i class="material-icons">
+            {{ $project->category->icon_name }}
+          </i>
+        </div>
         <div class="content">
           <div style="display: flex;">
             <h2>{{ $project->name }}</h2>

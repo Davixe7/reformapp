@@ -5,12 +5,14 @@
   @csrf
   <div class="container">
     <h1>Crear Proyecto</h1>
-    <div class="card" style="margin-bottom: 20px;">
-      Lorem ipsum dolor sit amet
+    <div class="card" style="margin-bottom: 20px; display: flex; align-items: center;">
+      <i class="material-icons-outlined" style="margin-right: 10px;">lightbulb</i>
+      <div>Describe tu proyecto para que los profesionales indicados puedan verlo</div>
     </div>
     
     <div class="card" style="margin-bottom: 20px;">
       <div class="form-section-title">
+        <i class="material-icons">edit</i>
         Información Básica
       </div>
       <div>

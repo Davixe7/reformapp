@@ -27,6 +27,10 @@ class Project extends Model
       return $this->belongsTo('App\Models\User');
     }
     
+    public function category(){
+      return $this->belongsTo('App\Models\Category');
+    }
+    
     public function scopeByCategory($query, $category_id){
       if( !$category_id ){ return $query; }
       return $query->where('category_id',$category_id);
