@@ -16,8 +16,8 @@ class ProjectController extends Controller
     public function index(Request $request)
     {
       $categories = Category::all();
-      $projects = Project::published()->whereName( $request->name )->byDateRange( $request->from, $request->to )->orderBy('created_at', 'DESC')->get();
-      return view('projects.index', ['projects' => Project::all(), 'categories' => $categories ]);
+      $projects = Project::published()->byName( $request->name )->byCategory( $request->category_id )->orderBy('created_at', 'DESC')->get();
+      return view('projects.index', ['projects' => $projects, 'categories' => $categories ]);
     }
 
     /**

@@ -38,7 +38,7 @@ class Project extends Model
     
     public function scopeByName($query, $name){
       if( !$name ){ return $query; }
-      return $query->where('name', $name);
+      return $query->where('name', 'like', "%$name%");
     }
     
     public function scopePublished($query){

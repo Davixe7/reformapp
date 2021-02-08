@@ -21,32 +21,45 @@
         </button>
       </form>
     </div>
-    @if( $projects->count() )
-    <ul class="jobs-results-list">
-      @foreach( $projects as $project )
-      <li class="card">
-        <div class="avatar">
-          <i class="material-icons">
-            {{ $project->category->icon_name }}
-          </i>
+    <div class="col-lg-6">
+      @if( $projects->count() )
+      <div class="help-text">
+        <div>
+          Resultados de la búsqueda
         </div>
-        <div class="content">
-          <div style="display: flex;">
-            <h2>{{ $project->name }}</h2>
-            <div class="published-at" style="margin-left: auto;">
-              {{ $project->created_at }}
-            </div>
+        <div>
+          Monstrando {{ $projects->count() }} total
+        </div>
+      </div>
+      <ul class="jobs-results-list">
+        @foreach( $projects as $project )
+        <li class="card">
+          <div class="avatar">
+            <i class="material-icons">
+              {{ $project->category->icon_name }}
+            </i>
           </div>
-          <div class="excerpt">{{ $project->description }}</div>
-        </div>
-      </li>
-      @endforeach
-    </ul>
-    @else
-    <div class="card">
-      No hay resultados disponibles
+          <div class="content">
+            <div style="display: flex;">
+              <h2>{{ $project->name }}</h2>
+              <div class="published-at" style="margin-left: auto;">
+                {{ $project->created_at }}
+              </div>
+            </div>
+            <div class="excerpt">{{ $project->description }}</div>
+          </div>
+        </li>
+        @endforeach
+      </ul>
+      @else
+      <div class="card" style="display: flex; align-items: center;">
+        <i class="material-icons" style="margin-right: 15px;">
+          sentiment_neutral
+        </i>
+        No hay resultados disponibles
+      </div>
+      @endif
     </div>
-    @endif
   </div>
 </section>
 @endsection

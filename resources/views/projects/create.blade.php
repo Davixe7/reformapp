@@ -12,7 +12,7 @@
     
     <div class="card" style="margin-bottom: 20px;">
       <div class="form-section-title">
-        <i class="material-icons">edit</i>
+        <i class="material-icons-outlined">edit</i>
         Información Básica
       </div>
       <div>
