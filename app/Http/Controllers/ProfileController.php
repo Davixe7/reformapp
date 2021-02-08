@@ -35,7 +35,7 @@ class ProfileController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      
     }
 
     /**
@@ -77,7 +77,8 @@ class ProfileController extends Controller
         'phone_1' => $request->phone_1,
         'phone_2' => $request->phone_2,
         'description' => $request->description,
-        'address' => $request->address
+        'address' => $request->address,
+        'profile_picture' => $request->profile_picture ?: $profile->profile_picture
       ]);
       
       return redirect()->route('profile')->with(['profile'=>$profile]);

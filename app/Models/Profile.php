@@ -21,7 +21,8 @@ class Profile extends Model
         'phone_2',
         'description',
         'address',
-        'user_id'
+        'user_id',
+        'profile_picture'
     ];
 
     /**
