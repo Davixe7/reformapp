@@ -29,7 +29,8 @@ class UpdateProfileRequest extends FormRequest
             'phone_1' => 'nullable|numeric',
             'phone_2' => 'nullable|numeric',
             'description' => 'nullable|string|max:255',
-            'address' => 'nullable|string|max:150'
+            'address' => 'nullable|string|max:150',
+            'profile_picture' => 'nullable|string'
         ];
     }
 }
