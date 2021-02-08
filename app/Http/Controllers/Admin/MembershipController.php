@@ -1,9 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use App\Models\Membership;
 use Illuminate\Http\Request;
+use App\Http\Requests\StoreMembershipRequest;
+use App\Http\Requests\UpdateMembershipRequest;
 
 class MembershipController extends Controller
 {
@@ -84,7 +86,7 @@ class MembershipController extends Controller
             'price' => $request->price ?: $membership->price
         ]);
 
-        return view('admin.membership.show', ['membership' => $membership]);
+        return view('admin.memberships.show', ['membership' => $membership]);
     }
 
     /**
@@ -96,6 +98,6 @@ class MembershipController extends Controller
     public function destroy(Membership $membership)
     {
         $membership->destroy();
-        return view('admin.membership.index', ['memberships' => Membership::all()]);
+        return view('admin.memberships.index', ['memberships' => Membership::all()]);
     }
 }
