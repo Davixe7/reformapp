@@ -1,3 +1,10 @@
+@mixin z-3 {
+  border: none;
+  box-shadow: 0 2px 6px 1px rgba(0,0,0,.12);
+}
+.z-3 {
+  @include z-3;
+}
 @import 'forms';
 @import 'tables';
 @import 'buscador';
@@ -5,6 +12,7 @@
 body {
   font-family: 'Mulish';
   font-size: 13px;
+  font-weight: 500;
   margin: 0;
   background: #efefef;
 }
@@ -80,6 +88,7 @@ h1 {
   }
   h2 {
     font-size: 14px;
+    font-weight: 700;
     margin: 0 0 5px;
   }
   .content {
@@ -88,6 +97,7 @@ h1 {
   .excerpt {
     display: -webkit-box;
     font-size: 12px;
+    font-weight: 600;
     color: gray;
     margin-bottom: 5px;
     text-overflow: ellipsis;
@@ -130,12 +140,6 @@ button {
   cursor: pointer;
 }
 
-.col-lg-6 {
-  width: 100%;
-  @media(min-width: 768px){
-    width: 50%;
-  }
-}
 .card {
   display: block;
   padding: 20px;

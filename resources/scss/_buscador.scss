@@ -4,7 +4,12 @@
   margin-bottom: 20px;
 
   input {
-    flex: 1 0 auto;
+    flex: 1 1 auto;
+    @include z-3;
+  }
+  select, button {
+    flex: 0 1;
+    text-transform: capitalize;
   }
   input, select {
     margin-right: 15px;

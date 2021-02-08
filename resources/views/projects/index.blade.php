@@ -9,12 +9,9 @@
           <input class="form-control"
             type="search"
             name="name"
-            placeholder="Nombre o Descripción del Proyecto"
+            placeholder="Buscar por nombre..."
           />
           <select class="form-control" name="category_id">
-            <option value="">
-              Seleccionar categoría
-            </option>
             @foreach( $categories as $category )
             <option value="{{$category->id}}">
               {{ $category->name }}

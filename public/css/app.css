@@ -1,3 +1,8 @@
+.z-3 {
+  border: none;
+  box-shadow: 0 2px 6px 1px rgba(0, 0, 0, 0.12);
+}
+
 .form-group {
   margin-bottom: 20px;
 }
@@ -60,7 +65,13 @@ td {
   margin-bottom: 20px;
 }
 .search-box input {
-  flex: 1 0 auto;
+  flex: 1 1 auto;
+  border: none;
+  box-shadow: 0 2px 6px 1px rgba(0, 0, 0, 0.12);
+}
+.search-box select, .search-box button {
+  flex: 0 1;
+  text-transform: capitalize;
 }
 .search-box input, .search-box select {
   margin-right: 15px;
@@ -184,6 +195,7 @@ td {
 body {
   font-family: "Mulish";
   font-size: 13px;
+  font-weight: 500;
   margin: 0;
   background: #efefef;
 }
@@ -268,6 +280,7 @@ h1 {
 }
 .jobs-results-list li h2 {
   font-size: 14px;
+  font-weight: 700;
   margin: 0 0 5px;
 }
 .jobs-results-list li .content {
@@ -276,6 +289,7 @@ h1 {
 .jobs-results-list li .excerpt {
   display: -webkit-box;
   font-size: 12px;
+  font-weight: 600;
   color: gray;
   margin-bottom: 5px;
   text-overflow: ellipsis;
@@ -319,15 +333,6 @@ button {
   border: none;
   border-radius: 3px;
   cursor: pointer;
-}
-
-.col-lg-6 {
-  width: 100%;
-}
-@media (min-width: 768px) {
-  .col-lg-6 {
-    width: 50%;
-  }
 }
 
 .card {
